@@ -1,8 +1,19 @@
 spring:
     application:
         name: eureka-server
-#    profiles:
-#        include: classpath:mybatis/mybatis.yml
+    profiles:
+        include: classpath:mybatis/mybatis.yml
+    datasource:
+        url: jdbc:mysql://${jdbc.url}?serverTimezone=GMT%2B8&createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=CONVERT_TO_NULL&transformedBitIsBoolean=true&pinGlobalTxToPhysicalConnection=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+        username: ${jdbc.username}
+        password: ${jdbc.password}
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+    typeAliasesPackage: com.qqbibi.b2c.activity.biz.mapper
+    mapperLocations: classpath:mybatis/**/*.xml
+
+
 
 server:
     port: 7000
@@ -15,7 +26,6 @@ eureka:
         fetch-registry: false
         service-url:
             defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
 
 
 
