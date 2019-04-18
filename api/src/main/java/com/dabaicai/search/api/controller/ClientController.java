@@ -3,6 +3,8 @@ package com.dabaicai.search.api.controller;
 import com.dabaicai.search.common.util.Result;
 import com.dabaicai.search.common.util.ResultCode;
 import com.dabaicai.search.common.vo.inputvo.CrawlHtmlInputVo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,7 @@ public class ClientController {
     String key2;
     @Value("33")
     String key3;
-
+    Logger logger= LoggerFactory.getLogger(ClientController.class);
     @RequestMapping("/com/dabaicai/search/api")
     public Result test(CrawlHtmlInputVo vo) {
 

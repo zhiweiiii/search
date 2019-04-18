@@ -1,8 +1,12 @@
 spring:
     application:
         name: eureka-server
+#    profiles:
+#        include: classpath:mybatis/mybatis.yml
+
 server:
     port: 7000
+
 eureka:
     instance:
         hostname: localhost
@@ -11,3 +15,7 @@ eureka:
         fetch-registry: false
         service-url:
             defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+
+
