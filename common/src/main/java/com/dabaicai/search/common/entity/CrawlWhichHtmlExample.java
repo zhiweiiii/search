@@ -1,4 +1,4 @@
-package com.dabaicai.search.api.entity;
+package com.dabaicai.search.common.entity;
 
 import java.util.ArrayList;
 import java.util.Date;

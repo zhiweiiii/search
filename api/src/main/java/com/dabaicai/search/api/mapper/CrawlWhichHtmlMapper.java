@@ -1,7 +1,7 @@
 package com.dabaicai.search.api.mapper;
 
-import com.dabaicai.search.api.entity.CrawlWhichHtml;
-import com.dabaicai.search.api.entity.CrawlWhichHtmlExample;
+import com.dabaicai.search.common.entity.CrawlWhichHtml;
+import com.dabaicai.search.common.entity.CrawlWhichHtmlExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

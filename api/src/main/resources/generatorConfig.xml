@@ -18,7 +18,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--生成Model类存放位置--><!--targetProject 填入项目存在计算机的位置 -->
-        <javaModelGenerator targetPackage="com.dabaicai.search.api.entity" targetProject="E:\myproject\search\api\src\main\java">
+        <javaModelGenerator targetPackage="com.dabaicai.search.common.entity" targetProject="E:\myproject\search\common\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>

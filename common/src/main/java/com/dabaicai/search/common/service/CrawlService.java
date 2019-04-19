@@ -1,5 +1,6 @@
 package com.dabaicai.search.common.service;
 
+import com.dabaicai.search.common.entity.CrawlWhichHtml;
 import com.dabaicai.search.common.vo.output.CrawlHtmlOutputVo;
 
 import java.util.List;
@@ -7,10 +8,10 @@ import java.util.List;
 public interface CrawlService {
 
     //获取链接
-    public List<String> getCrawlHtml();
+    public List<CrawlWhichHtml> getCrawlHtml();
 
     //处理链接
-    public CrawlHtmlOutputVo CrawlFromHtml();
+    public CrawlHtmlOutputVo CrawlFromHtml(CrawlWhichHtml whichHtml);
 
 
 

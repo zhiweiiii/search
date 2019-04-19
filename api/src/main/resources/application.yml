@@ -1,17 +1,15 @@
 spring:
     application:
         name: eureka-server
-    profiles:
-        include: classpath:mybatis/mybatis.yml
     datasource:
-        url: jdbc:mysql://${jdbc.url}?serverTimezone=GMT%2B8&createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=CONVERT_TO_NULL&transformedBitIsBoolean=true&pinGlobalTxToPhysicalConnection=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
-        username: ${jdbc.username}
-        password: ${jdbc.password}
+        url: jdbc:mysql://127.0.0.1:3306/dabaicaiSearch?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&nullCatalogMeansCurrent=true
+        username: root
+        password: 123456
         driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
-    typeAliasesPackage: com.qqbibi.b2c.activity.biz.mapper
-    mapperLocations: classpath:mybatis/**/*.xml
+    typeAliasesPackage: com.dabaicai.search.api.mapper
+    mapperLocations: classpath:mapper/*.xml
 
 
 
