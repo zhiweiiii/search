@@ -1,5 +1,6 @@
 package com.dabaicai.search.api.controller;
 
+import com.dabaicai.search.common.entity.CrawlChildHtml;
 import com.dabaicai.search.common.entity.CrawlWhichHtml;
 import com.dabaicai.search.common.service.CrawlService;
 import com.dabaicai.search.common.vo.inputvo.CrawlHtmlInputVo;
@@ -16,24 +17,27 @@ import java.util.List;
  * @author zhiwei
  * @date 2019/4/18 13:44
  */
-@Component("crawlRunner")
-@Order(value=1)
-public class CrawlRunner implements CommandLineRunner {
+@Component("crawlChildRunner")
+@Order(value=2)
+public class CrawlChildRunner implements CommandLineRunner {
 
-    Logger logger= LoggerFactory.getLogger(CrawlRunner.class);
+    Logger logger= LoggerFactory.getLogger(CrawlChildRunner.class);
 
     @Autowired
     CrawlService crawlService;
 
     @Override
     public void run(String... args) throws Exception {
-        logger.debug("crawlRunner开始启动");
-        List<CrawlWhichHtml> whichHtmls = crawlService.getCrawlHtml();
-        for (CrawlWhichHtml whichHtml : whichHtmls) {
-            CrawlHtmlInputVo crawlHtmlInputVo=new CrawlHtmlInputVo();
-            crawlHtmlInputVo.setHtml(whichHtml.getHtml());
-            crawlHtmlInputVo.setHostId(whichHtml.getId());
-            crawlService.CrawlFromHtml(crawlHtmlInputVo);
+        logger.debug("crawlChildRunner开始启动");
+        while (true) {
+            List<CrawlChildHtml> childHtmls = crawlService.getCrawlChildHtml();
+            for (CrawlChildHtml childHtml : childHtmls) {
+                CrawlHtmlInputVo inputVo=new CrawlHtmlInputVo();
+                inputVo.setHostId(childHtml.getHostId());
+                inputVo.setHtml(childHtml.getHtml());
+                crawlService.CrawlFromHtml(inputVo);
+            }
+
         }
     }
 

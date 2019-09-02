@@ -1,5 +1,7 @@
 package com.dabaicai.search.common.vo.output;
 
+import com.dabaicai.search.common.entity.CrawlWhichHtml;
+
 import java.util.List;
 
 /**
@@ -13,6 +15,26 @@ public class JsoupGetMessageOutVo {
     public String html;
 
     public List<String> childHtmls;
+
+    public String text;
+
+    public int hostId;
+
+    public int getHostId() {
+        return hostId;
+    }
+
+    public void setHostId(int hostId) {
+        this.hostId = hostId;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 
     public String getTitle() {
         return title;
